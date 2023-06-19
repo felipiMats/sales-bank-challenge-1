@@ -1,0 +1,49 @@
+<%= form_with(model: sale, url: sales_path, multipart: true) do |form| %>
+  <% if sale.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+        <% sale.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :purchase_name, style: "display: block" %>
+    <%= form.text_field :purchase_name %>
+  </div>
+
+  <div>
+    <%= form.label :item_description, style: "display: block" %>
+    <%= form.text_field :item_description %>
+  </div>
+
+  <div>
+    <%= form.label :item_price, style: "display: block" %>
+    <%= form.text_field :item_price %>
+  </div>
+
+  <div>
+    <%= form.label :purchase_count, style: "display: block" %>
+    <%= form.number_field :purchase_count %>
+  </div>
+
+  <div>
+    <%= form.label :merchant_address, style: "display: block" %>
+    <%= form.text_field :merchant_address %>
+  </div>
+
+  <div>
+    <%= form.label :merchant_name, style: "display: block" %>
+    <%= form.text_field :merchant_name %>
+  </div>
+
+  <hr>
+
+  <div>
+    <%= form.submit 'Create sale', name: 'create_button' %>
+  </div>
+<% end %>

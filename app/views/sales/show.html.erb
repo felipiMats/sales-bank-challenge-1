@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<h1><%= @sale.merchant_name %> company purchases</h1>
+<hr>
+<%= render @sale %>
+
+<div>
+  <%= link_to "Edit this sale", edit_sale_path(@sale) %> |
+  <%= link_to "Back to sales", sales_path %> |
+  <%= link_to "Back to Home", company_path(1) %>
+  <hr>
+
+  <%= button_to "Destroy this sale", @sale, method: :delete %>
+</div>
